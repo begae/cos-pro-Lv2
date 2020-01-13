@@ -1,0 +1,14 @@
+
+func solution(price: Double, grade: Character) -> Double {
+    var offedPrice: Double = 0
+    if grade == "S" {
+        offedPrice = price * 0.95
+    } else if grade == "G" {
+        offedPrice = price * 0.9
+    } else if grade == "V" {
+        offedPrice = price * 0.85
+    }
+    return offedPrice
+}
+
+solution(price: 32800, grade: "V")
