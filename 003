@@ -1,0 +1,17 @@
+
+func solution(start_month: Int, start_day: Int, end_month: Int, end_day: Int) -> Int {
+    
+    func a(month: Int, day: Int) -> Int {
+        let calendar: Array<Int> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        var days: Int = 0
+        days += day
+        for i in 0...month-2 {
+            days += calendar[i]
+        }
+        return days
+    }
+    
+    return a(month: end_month, day: end_day) - a(month: start_month, day: start_day)
+}
+
+solution(start_month: 5, start_day: 16, end_month: 12, end_day: 25)
