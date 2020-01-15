@@ -1,0 +1,12 @@
+
+func solution(input: Array<Int>) -> Int {
+    var num: Int = 0
+    for i in 0...9 {
+        if input[i] >= 650 && input[i] < 800 {
+            num += 1
+        }
+    }
+    return num
+}
+
+solution(input: [650, 722, 914, 558, 714, 803, 650, 679, 669, 800])
