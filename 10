@@ -1,0 +1,18 @@
+
+func solution(input: Array<Int>) -> Int {
+    var everage: Double = 0
+    var sum: Double = 0
+    for num in input {
+        sum += Double(num)
+    }
+    everage = sum / Double(input.count)
+    var count: Int = 0
+    for num in input {
+        if Double(num) <= everage {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(input: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) //5
