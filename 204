@@ -1,0 +1,21 @@
+
+func solution(input: Array<String>) -> String {
+    
+    var sum: String = ""
+    
+    for str in input {
+        if str.count >= 5 {
+            sum += str
+        }
+    }
+    
+    if sum == "" {
+        sum += "Empty"
+    }
+    
+    return sum
+    
+}
+
+solution(input: ["my", "favorite", "color", "is", "violet"])
+solution(input: ["yes", "i", "am"])
