@@ -1,0 +1,13 @@
+
+func solution(input: Int) -> Int {
+    var arr: Array<Character> = Array(String(input))
+    var count: Int = 0
+    for i in 0...arr.count-1 {
+        if arr[i] == "2" || arr[i] == "3" || arr[i] == "5" || arr[i] == "7" {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(input: 29022531) // 5
