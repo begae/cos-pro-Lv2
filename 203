@@ -1,0 +1,16 @@
+
+func solution(n: Int, m: Int) -> Int {
+    
+    var sum: Int = 0
+    
+    for i in n...m {
+        if i % 2 == 0 {
+            sum += i * i
+        }
+    }
+    
+    return sum
+    
+}
+
+solution(n: 4, m: 7) // 52
