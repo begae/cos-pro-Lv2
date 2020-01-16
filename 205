@@ -1,0 +1,10 @@
+
+func solution(attack: Int, recovery: Int, hp: Int) -> Int {
+    var count: Int = hp / (attack - recovery)
+    if hp % (attack - recovery) != 0 {
+        count += 1
+    }
+    return count
+}
+
+solution(attack: 30, recovery: 10, hp: 60) // 3
