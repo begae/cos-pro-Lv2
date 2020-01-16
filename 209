@@ -1,0 +1,20 @@
+
+func solution(votes: Array<Int>, N: Int, K: Int) -> Int {
+    var count: Array<Int> = Array(repeating: 0, count: N+1)
+    var num: Int = 0
+    for i in 1...N {
+        for j in 0...votes.count-1 {
+            if votes[j] == i {
+                count[i] += 1
+            }
+        }
+    }
+    for k in 0...count.count-1 {
+        if count[k] == K {
+            num += 1
+        }
+    }
+    return num
+}
+
+solution(votes: [2, 5, 3, 4, 1, 5, 1, 5, 5, 3], N: 5, K: 2) // 2
