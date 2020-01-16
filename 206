@@ -1,0 +1,14 @@
+
+func solution(floors: Array<Int>) -> Int {
+    var moves: Int = 0
+    for i in 1...floors.count-1 {
+        if floors[i] >= floors[i-1] {
+            moves += floors[i] - floors[i-1]
+        } else {
+            moves += floors[i-1] - floors[i]
+        }
+    }
+    return moves
+}
+
+solution(floors: [1, 2, 5, 4, 2]) // 7
