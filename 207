@@ -1,0 +1,12 @@
+
+func solution(value: Double, unit: Character) -> Int {
+    var result: Int = 0
+    if unit == "C" {
+        result = Int((value * 1.8) + 32)
+    } else if unit == "F" {
+        result = Int((value - 32) / 1.8)
+    }
+    return result
+}
+
+solution(value: 527, unit: "C") // 980
