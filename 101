@@ -1,3 +1,4 @@
+
 func solution(input: Array<String>) -> Array<Int> {
     var output: Array<Int> = [0, 0, 0, 0, 0, 0]
     for i in 0...(input.count - 1) {
