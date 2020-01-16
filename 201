@@ -1,0 +1,36 @@
+
+func solution(leftGloves: Array<Int>, rightGloves: Array<Int>) -> Int {
+    
+    var pairs: Int = 0
+    var lefts: Array<Int> = Array(repeating: 0, count: 11)
+    var rights: Array<Int> = Array(repeating: 0, count: 11)
+    
+    for i in 0...leftGloves.count-1 {
+        for j in 1...10 {
+            if leftGloves[i] == j {
+                lefts[j] += 1
+            }
+        }
+    }
+    
+    for k in 0...rightGloves.count-1 {
+        for l in 1...10 {
+            if rightGloves[k] == l {
+                rights[l] += 1
+            }
+        }
+    }
+    
+    for m in 1...10 {
+        if lefts[m] >= rights[m] {
+            pairs += rights[m]
+        } else {
+            pairs += lefts[m]
+        }
+    }
+    
+    return pairs
+    
+}
+
+solution(leftGloves: [2, 1, 2, 2, 4], rightGloves: [1, 2, 2, 4, 4, 7]) // 4
