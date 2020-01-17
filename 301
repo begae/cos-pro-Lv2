@@ -1,0 +1,13 @@
+
+func solution(scores: Array<Int>, n: Int) -> Int {
+    var hisScore: Int = scores[n]
+    var sorted: Array<Int> = []
+    for i in 0...100 {
+        if scores.contains(i) {
+            sorted.insert(i, at: 0)
+        }
+    }
+    return sorted.index(of: hisScore)! + 1
+}
+
+solution(scores: [20, 60, 98, 59], n: 3) // 3
