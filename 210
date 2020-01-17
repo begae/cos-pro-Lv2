@@ -1,0 +1,19 @@
+
+func solution(purchase: Array<Int>) -> Int {
+    
+    var sum: Int = 0
+    for i in 0...purchase.count-1 {
+        if purchase[i] >= 1000000 {
+            sum += 50000
+        } else if purchase[i] >= 600000 {
+            sum += 30000
+        } else if purchase[i] >= 400000 {
+            sum += 20000
+        } else if purchase[i] >= 200000 {
+            sum += 10000
+        }
+    }
+    return sum
+}
+
+solution(purchase: [150000, 210000, 399990, 990000, 1000000]) // 100000
