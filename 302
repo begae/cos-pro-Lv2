@@ -1,0 +1,30 @@
+
+func solution(current: Array<Int>, last: Array<Int>) -> Int {
+    
+    var num: Int = current.count / 10
+    if num == 0 {
+        num += 1
+    }
+    
+    var sorted: Array<Int> = []
+    for j in current.min()!...current.max()! {
+        if current.contains(j) {
+            sorted.insert(j, at: 0)
+        }
+    }
+    
+    var gap: Array<Int> = Array(repeating: 0, count: current.count)
+    for i in 0...current.count-1 {
+        gap[i] = current[i] - last[i]
+    }
+    
+    for k in 0...gap.count-1 {
+        if gap[k] == gap.max()! && k >= num {
+            num += 1
+        }
+    }
+    
+    return num
+}
+
+solution(current: [70, 100, 70, 80, 50, 95], last: [35, 65, 80, 50, 20, 60]) // 3
