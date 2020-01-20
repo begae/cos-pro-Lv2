@@ -1,0 +1,18 @@
+
+func solution(words: Array<String>, word: String) -> Int {
+    var correct: Array<String> = Array(repeating: word, count: words.count)
+    var correctSum: String = correct.joined()
+    var correctSplit: Array<Character> = Array(correctSum)
+    var sum: String = words.joined()
+    var split: Array<Character> = Array(sum)
+    var count: Int = 0
+    for i in 0...split.count-1 {
+        if split[i] != correctSplit[i] {
+            split[i] == correctSplit[i]
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(words: ["CODE", "COED", "CDEO"], word: "CODE") // 5
