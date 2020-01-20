@@ -1,0 +1,18 @@
+
+func solution(scores: Array<Int>) -> Int {
+    var sum: Int = 0
+    var sorted: Array<Int> = []
+    for i in scores.min()!...scores.max()! {
+        if scores.contains(i) {
+            sorted.insert(i, at: 0)
+        }
+    }
+    sorted.removeLast()
+    sorted.removeFirst()
+    for i in 0...sorted.count-1 {
+        sum += sorted[i]
+    }
+    return sum / sorted.count
+}
+
+solution(scores: [35, 28, 98, 34, 20, 50, 85, 74, 71, 7]) // 49
