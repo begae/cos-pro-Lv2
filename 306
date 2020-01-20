@@ -1,0 +1,20 @@
+
+func solution(length: Int) -> String {
+    var arr: Array<String> = []
+    if length % 6 == 0 {
+        arr = Array(repeating: "RRRGGB", count: length / 6)
+    } else if length % 6 == 5 {
+        arr = Array(repeating: "RRRGGB", count: length / 6)
+        arr.append("RRRGG")
+    } else if length % 6 == 3 {
+        arr = Array(repeating: "RRRGGB", count: length / 6)
+        arr.append("RRR")
+    } else {
+        arr = ["-1"]
+    }
+    return arr.joined()
+}
+
+solution(length: 11)
+solution(length: 16)
+
