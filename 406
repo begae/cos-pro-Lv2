@@ -1,0 +1,13 @@
+
+func solution(points: Int) -> Int {
+    var usable: Int = 0
+    if points < 1000 {
+        usable = 0
+    } else {
+        usable = points / 100 * 100
+    }
+    return usable
+}
+
+solution(points: 2323) // 2300
+
