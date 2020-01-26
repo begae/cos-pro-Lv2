@@ -1,0 +1,24 @@
+
+func solution(programs: [[Int]]) -> Int {
+    var simul: Int = 0
+    var count: Array<Int> = Array(repeating: 0, count: 24)
+    var join: Array<Int> = Array(programs.joined())
+    for i in join[0]...join[1]-1 {
+        count[i] += 1
+    }
+    for i in join[2]...join[3]-1 {
+        count[i] += 1
+    }
+    for i in join[4]...join[5]-1 {
+        count[i] += 1
+    }
+    for i in 0...23 {
+        if count[i] == 2 || count[i] == 3 {
+            simul += 1
+        }
+    }
+    return simul
+}
+
+solution(programs: [[1, 6], [3, 5], [2, 8]]) // 4
+
