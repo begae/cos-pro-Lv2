@@ -1,0 +1,23 @@
+
+func solution(votes: Array<Int>, n: Int) -> Int {
+    var pick: Int = -1
+    var count: Array<Int> = Array(repeating: 0, count: n+1)
+    for i in 0...votes.count-1 {
+        for j in 1...n {
+            if votes[i] == j {
+                count[j] += 1
+            }
+        }
+    }
+    if count.max()! >= votes.count / 2 {
+        pick = count.firstIndex(of: count.max()!)!
+    } else {
+        pick = -1
+    }
+    return pick
+}
+
+solution(votes: [1,2,1,3,1,2,1], n: 3)
+solution(votes: [2,1,2,1,2,2,1], n: 2)
+solution(votes: [1,1,2,2,3,3,4,4], n: 4)
+
