@@ -1,0 +1,12 @@
+
+func solution(mid: Array<Int>, final: Array<Int>) -> Array<Int> {
+    var gap: Array<Int> = []
+    for i in 0...mid.count-1 {
+        gap.insert(final[i] - mid[i], at: i)
+    }
+    var maxMin: Array<Int> = [gap.max()!, gap.min()!]
+    return maxMin
+}
+
+solution(mid: [20, 50, 40], final: [10, 50, 70]) // [30, -10]
+
