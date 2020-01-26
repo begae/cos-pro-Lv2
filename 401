@@ -1,0 +1,13 @@
+
+func solution(schedule: Array<Character>) -> Array<Int> {
+    var students: Array<Int> = []
+    for i in 0...9 {
+        if schedule[i] == "X" {
+            students.append(i + 1)
+        }
+    }
+    return students
+}
+
+solution(schedule: ["O", "X", "X", "O", "O", "O", "X", "O", "X", "X"])
+
