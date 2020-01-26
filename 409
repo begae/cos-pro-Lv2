@@ -1,0 +1,35 @@
+
+func solution(height: [[Int]]) -> Int {
+    var count: Array<Int> = []
+    var result: Int = 16
+    var joined: Array<Int> = Array(height.joined())
+    for i in 0...14 {
+        if joined[i+1] < joined[i] {
+            count.insert(i+1, at: 0)
+        }
+    }
+    for i in 4...15 {
+        if joined[i-4] < joined[i] {
+            count.insert(i+1, at: 0)
+        }
+    }
+    for i in 0...11 {
+        if joined[i+4] < joined[i] {
+            count.insert(i+1, at: 0)
+        }
+    }
+    for i in 1...15 {
+        if joined[i-1] < joined[i] {
+            count.insert(i+1, at: 0)
+        }
+    }
+    for i in 1...16 {
+        if count.contains(i) {
+            result -= 1
+        }
+    }
+    return result
+}
+
+solution(height: [[3, 6, 2, 8], [7, 3, 4, 2], [8, 6, 7, 3], [5, 3, 2, 9]]) // 5
+
