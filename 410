@@ -1,0 +1,13 @@
+
+func solution(scores: Array<Int>, cutline: Int) -> Int {
+    var count: Int = 0
+    for i in 0...scores.count-1 {
+        if scores[i] >= cutline {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(scores: [80, 90, 55, 60, 59], cutline: 60) // 3
+
