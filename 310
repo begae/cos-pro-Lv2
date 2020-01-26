@@ -1,0 +1,13 @@
+
+func solution(arr: Array<Int>) -> Int {
+    var count: Int = 0
+    for i in 0...arr.count-1 {
+        if arr.contains(arr[i] / 2) && arr[i] % 2 == 0 {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(arr: [4, 8, 3, 6, 7]) // 2
+
