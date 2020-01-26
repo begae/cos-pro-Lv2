@@ -1,0 +1,15 @@
+
+func solution(classes: Array<Int>, m: Int) -> Int {
+    var count: Int = 0
+    for i in 0...classes.count-1 {
+        if classes[i] % m == 0 {
+            count += classes[i] / m
+        } else {
+            count += classes[i] / m + 1
+        }
+    }
+    return count
+}
+
+solution(classes: [80, 45, 33, 20], m: 30) // 8
+
