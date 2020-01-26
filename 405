@@ -1,0 +1,14 @@
+
+func solution(calories: Array<Int>) -> Int {
+    var burn: Int = 0
+    for i in 1...calories.count-1 {
+        let cut: ArraySlice<Int> = calories[..<i]
+        if calories[i] > cut.min()! {
+            burn += calories[i] - cut.min()!
+        }
+    }
+    return burn
+}
+
+solution(calories: [713, 665, 873, 500, 751]) // 459
+
