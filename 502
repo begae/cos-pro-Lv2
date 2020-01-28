@@ -1,0 +1,15 @@
+
+func solution(time: Array<Int>) -> Int {
+    var count: Int = 0
+    let end: Int = time.lastIndex(of: 1)!
+    let start: Int = time.firstIndex(of: 1)!
+    for i in start...end {
+        if time[i] == 0 {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(time: [1, 1, 0, 0, 1, 0, 1, 0, 0, 0]) // 3
+
