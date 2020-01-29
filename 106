@@ -1,0 +1,19 @@
+
+func solution(num: Int) -> Int {
+    var arr: Array<String> = ["1"]
+    for i in 2...num {
+        arr.append(String(i))
+    }
+    let joined: String = arr.joined()
+    let seperated: Array<Character> = Array(joined)
+    var count: Int = 0
+    for j in 0...seperated.count-1 {
+        if seperated[j] == "3" || seperated[j] == "6" || seperated[j] == "9" {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(num: 40) // 22
+
