@@ -1,0 +1,22 @@
+
+func solution(socks: Array<Int>) -> Int {
+    var colors: Array<Int> = Array(repeating: 0, count: 11)
+    var count: Int = 0
+    for i in 0...10 {
+        for j in 0...socks.count-1 {
+            if socks[j] == i {
+                colors[i] += 1
+            }
+        }
+    }
+    for k in 0...10 {
+        if colors[k] >= 2 {
+            count += colors[k] / 2
+        }
+    }
+    return count
+}
+
+solution(socks: [1, 2, 1, 3, 2, 1]) // 2
+solution(socks: [1, 1, 1, 1, 1, 2]) // 2
+
