@@ -1,0 +1,14 @@
+
+func solution(a: Int, b: Int) -> Int {
+    var smallest: Int = 0
+    for i in 1...b {
+        if a * i % b == 0 {
+            smallest = a * i
+            break
+        }
+    }
+    return smallest
+}
+
+solution(a: 4, b: 6) // 12
+
