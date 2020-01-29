@@ -1,0 +1,17 @@
+
+func solution(korean: Int, english: Int) -> Int {
+    var math: Int = 10
+    while korean + math + english < 210 {
+        math += 10
+    }
+    while korean + math + english > 210 {
+        math -= 1
+    }
+    if korean + 100 + english < 210 {
+        math = -1
+    }
+    return math
+}
+
+solution(korean: 70, english: 60) // 80
+
