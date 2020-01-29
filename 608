@@ -5,9 +5,10 @@ func solution(num: Int) -> Int {
         str.removeLast()
     }
     str = String(str.reversed())
-    var result: Int = num - Int(str)!
+    let rev: Int = Int(str)!
+    let result: Int = num > rev ? num - rev : rev - num
     return result
 }
 
 solution(num: 120) // 99
-
+solution(num: 23) // 9
