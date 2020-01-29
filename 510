@@ -1,0 +1,16 @@
+
+func solution(time: Array<Int>, n: Int) -> Int {
+    var hours: Array<Int> = Array(repeating: 0, count: n)
+    for i in 0...time.count-1 {
+        for j in 0...n-1 {
+            if i % n == j {
+                hours[j] += time[i]
+            }
+        }
+    }
+    return hours.max()!
+}
+
+solution(time: [1, 5, 1, 9], n: 3) // 10
+solution(time: [4, 8, 2, 5, 4, 6, 7], n: 4) // 14
+
