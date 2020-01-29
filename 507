@@ -1,0 +1,18 @@
+
+func solution(stuffs: Array<Int>) -> Int {
+    var regi: Int = 0
+    var solo: Int = 0
+    var simul: Int = 0
+    for i in stuffs {
+        if i > 3 {
+            regi += i
+        } else {
+            solo += i
+        }
+    }
+    simul = solo > regi ? solo : regi
+    return simul
+}
+
+solution(stuffs: [5, 3, 4, 2, 3, 2]) // 10
+
