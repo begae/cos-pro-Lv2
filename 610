@@ -1,0 +1,15 @@
+
+func solution(weight: Int, boxes: Array<Int>) -> Int {
+    let ten: Int = weight / 10
+    let pass: ClosedRange<Int> = weight-ten...weight+ten
+    var count: Int = 0
+    for i in boxes {
+        if pass.contains(i) == false {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(weight: 600, boxes: [653, 670, 533, 540, 660]) // 2
+
