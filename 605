@@ -1,0 +1,16 @@
+
+func solution(money: Int, price: Int, n: Int) -> Int {
+    let primary: Int = money / price
+    var empty: Int = primary
+    var count: Int = primary
+    while empty >= 0 {
+        count += empty / n
+        empty += empty / n
+        empty -= n
+    }
+    return count
+}
+
+solution(money: 8, price: 2, n: 4) // 5
+solution(money: 6, price: 2, n: 2) // 5
+
