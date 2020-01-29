@@ -1,0 +1,25 @@
+
+func solution(taek: Int, run: Int, shoot: Array<Int>) -> Int {
+    var sum: Int = 0
+    if taek >= 25 {
+        sum += 250
+    } else {
+        sum += 8 * taek
+    }
+    sum += 250
+    sum -= (run - 60) * 5
+    var count: Int = 0
+    for i in shoot {
+        sum += i
+        if i == 10 {
+            count += 1
+        }
+    }
+    if count >= 7 {
+        sum += 100
+    }
+    return sum
+}
+
+solution(taek: 27, run: 63, shoot: [9, 10, 8, 10, 10, 10, 7, 10, 10, 10]) // 679
+
