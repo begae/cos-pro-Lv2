@@ -1,0 +1,14 @@
+
+func solution(temperature: Array<Int>, a: Int, b: Int) -> Int {
+    let temp: ArraySlice<Int> = temperature[a...b]
+    var count: Int = 0
+    for i in temp {
+        if i > temperature[a] && i > temperature[b] {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(temperature: [3, 2, 1, 5, 4, 3, 3, 2], a: 1, b: 6) // 2
+
