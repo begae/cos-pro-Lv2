@@ -1,0 +1,15 @@
+
+func solution(characters: String) -> String {
+    let arr: Array<Character> = Array(characters)
+    var correct: String = ""
+    for i in 0...arr.count-2 {
+        if arr[i] != arr[i+1] {
+            correct.append(arr[i])
+        }
+    }
+    correct.append(arr[arr.count-1])
+    return correct
+}
+
+solution(characters: "senteeeencccccceeee") // "sentence"
+
