@@ -1,0 +1,8 @@
+
+func solution(arr: Array<Int>) -> Array<Int> {
+    let rev: Array<Int> = arr.reversed()
+    return rev
+}
+
+solution(arr: [1, 4, 2, 3]) // [3, 2, 4, 1]
+
