@@ -1,0 +1,22 @@
+
+func solution(arr: Array<Int>) -> Int {
+    var count: Array<Int> = Array(repeating: 0, count: 1001)
+    var recount: Array<Int> = []
+    for i in 0...arr.count-1 {
+        for j in 1...1000 {
+            if arr[i] == j {
+                count[j] += 1
+            }
+        }
+    }
+    for k in 0...1000 {
+        if count[k] != 0 {
+            recount.insert(count[k], at: 0)
+        }
+    }
+    return recount.max()! / recount.min()!
+}
+
+solution(arr: [1,2,3,3,1,3,3,2,3,2]) // 2
+solution(arr: [1,1,1,1,1,1,1,1,2,2]) // 4
+
