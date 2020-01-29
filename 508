@@ -1,0 +1,20 @@
+
+func solution(usage: Int) -> Int {
+    var use: Int = usage
+    var fee: Int = 0
+    if use > 30 {
+        fee += (use - 30) * 840
+        use = 30
+    }
+    if use > 20 {
+        fee += (use - 20) * 570
+        use = 20
+    }
+    if use <= 20 {
+        fee += use * 430
+    }
+    return fee
+}
+
+solution(usage: 35) // 18500
+
