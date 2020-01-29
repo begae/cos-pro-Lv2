@@ -1,0 +1,13 @@
+
+func solution(num: Int) -> Int {
+    var str: String = String(num)
+    while str.hasSuffix("0") {
+        str.removeLast()
+    }
+    str = String(str.reversed())
+    var result: Int = num - Int(str)!
+    return result
+}
+
+solution(num: 120) // 99
+
