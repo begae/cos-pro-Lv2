@@ -1,0 +1,18 @@
+
+func solution(sentence: String) -> Bool {
+    let arr: Array<Character> = Array(sentence)
+    var rev: Array<String> = []
+    var joined: String = ""
+    for i in arr {
+        if i != " " && i != "." {
+            rev.insert(String(i), at: 0)
+            joined.append(i)
+        }
+    }
+    let palindrome: String = String(rev.joined())
+    return palindrome == joined ? true : false
+}
+
+solution(sentence: "never odd or even.") // true
+solution(sentence: "palindrome") // false
+
