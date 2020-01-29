@@ -1,0 +1,19 @@
+
+func solution(money: Int, chairs: Array<Int>, tables: Array<Int>) -> Int {
+    var cost: Array<Int> = []
+    for i in chairs {
+        for j in tables {
+            if i + j <= money {
+                cost.insert(i + j, at: 0)
+            } else {
+                cost.insert(0, at: 0)
+            }
+        }
+    }
+    return cost.max()!
+}
+
+solution(money: 7, chairs: [2, 5], tables: [4, 3, 5]) // 7
+solution(money: 7, chairs: [3], tables: [5]) // 0
+solution(money: 10, chairs: [2, 5], tables: [4, 3, 6]) // 9
+
