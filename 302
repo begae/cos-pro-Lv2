@@ -1,0 +1,32 @@
+
+func solution(current: Array<Int>, last: Array<Int>) -> Int {
+    var over80: Array<Int> = []
+    for i in current {
+        if i >= 80 {
+            over80.append(i)
+        }
+    }
+    var ten: Array<Int> = []
+    if current.count <= 10 {
+        ten.append(over80.max()!)
+    } else {
+        while ten.count == current.count / 10 {
+            ten.append(over80.max()!)
+            over80.remove(at: over80.firstIndex(of: over80.max()!)!)
+        }
+    }
+    var gap: Array<Int> = []
+    for i in 0...current.count-1 {
+        gap.append(current[i]-last[i])
+    }
+    var count: Int = ten.count
+    for i in 0...gap.count-1 {
+        if gap[i] == gap.max()! && current[i] < ten.min()! {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(current: [70, 100, 70, 80, 50, 95], last: [35, 65, 80, 50, 20, 60]) // 3
+
