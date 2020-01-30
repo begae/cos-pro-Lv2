@@ -1,0 +1,14 @@
+
+func solution(apple: Int, carrot: Int, k: Int) -> Int {
+    var count: Int = 0
+    for i in 1...66 {
+        if apple >= 3 * i && carrot >= i && apple + carrot - 4 * i >= k {
+            count += 1
+        }
+    }
+    return count
+}
+
+solution(apple: 5, carrot: 1, k: 2) // 1
+solution(apple: 10, carrot: 5, k: 4) // 2
+
