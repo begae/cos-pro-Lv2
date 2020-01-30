@@ -9,11 +9,15 @@ func solution(current: Array<Int>, last: Array<Int>) -> Int {
     var ten: Array<Int> = []
     if current.count <= 10 {
         ten.append(over80.max()!)
+        over80.remove(at: over80.firstIndex(of: over80.max()!)!)
     } else {
         while ten.count == current.count / 10 {
             ten.append(over80.max()!)
             over80.remove(at: over80.firstIndex(of: over80.max()!)!)
         }
+    }
+    if over80.max()! == ten.min()! {
+        ten.append(over80.max()!)
     }
     var gap: Array<Int> = []
     for i in 0...current.count-1 {
@@ -29,4 +33,3 @@ func solution(current: Array<Int>, last: Array<Int>) -> Int {
 }
 
 solution(current: [70, 100, 70, 80, 50, 95], last: [35, 65, 80, 50, 20, 60]) // 3
-
