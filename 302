@@ -11,7 +11,7 @@ func solution(current: Array<Int>, last: Array<Int>) -> Int {
         ten.append(over80.max()!)
         over80.remove(at: over80.firstIndex(of: over80.max()!)!)
     } else {
-        while ten.count == current.count / 10 {
+        while ten.count <= current.count / 10 {
             ten.append(over80.max()!)
             over80.remove(at: over80.firstIndex(of: over80.max()!)!)
         }
@@ -33,3 +33,4 @@ func solution(current: Array<Int>, last: Array<Int>) -> Int {
 }
 
 solution(current: [70, 100, 70, 80, 50, 95], last: [35, 65, 80, 50, 20, 60]) // 3
+
