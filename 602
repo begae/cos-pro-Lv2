@@ -1,0 +1,20 @@
+
+func solution(papers: Array<Int>, k: Int) -> Int {
+    var sum: Int = 0
+    var count: Int = 0
+    for i in 0...papers.count-1 {
+        while sum <= k {
+            sum += papers[i]
+            count = i + 1
+            break
+        }
+    }
+    if sum > k {
+        count -= 1
+    }
+    return count
+}
+
+solution(papers: [2, 4, 3, 2, 1], k: 10) // 3
+solution(papers: [2, 4, 3, 2, 1], k: 14) // 5
+
